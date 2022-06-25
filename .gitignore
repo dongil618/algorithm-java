@@ -89,6 +89,14 @@ fabric.properties
 .idea/**/markdown-navigator.xml
 .idea/**/markdown-navigator/
 
+## .idea etc
+.idea/**/compiler.xml
+.idea/**/jarRepositories.xml
+.idea/**/misc.xml
+.idea/**/vcs.xml
+.idea/**/.gitignore
+
+
 ### Java ###
 # Compiled class file
 *.class
@@ -145,6 +153,11 @@ Temporary Items
 ### Gradle ###
 .gradle
 build/
+gradle/
+build.gradle
+gradlew
+gradlew.bat
+settings.gradle
 
 # Ignore Gradle GUI config
 gradle-app.setting
