@@ -1,5 +1,5 @@
 ## 6. [연습문제] 없는 숫자 더하기
----
+
 - 문제링크 : https://programmers.co.kr/learn/courses/30/lessons/86051
 ### 문제설명
 ```
@@ -77,7 +77,7 @@ class Solution {
 
 ## 7. [연습문제] 음양 더하기
 
----
+
 - 문제링크 : https://programmers.co.kr/learn/courses/30/lessons/76501
 ### 문제설명
 ```
@@ -168,7 +168,7 @@ class Solution {
 
 ## 8. [연습문제] 평균 구하기
 
----
+
 - 문제링크 : https://programmers.co.kr/learn/courses/30/lessons/12944
 ### 문제설명
 ```
@@ -206,7 +206,7 @@ class Solution {
 
 
 ## 9. [연습문제] 핸드폰 번호 가리기
----
+
 - 문제링크 : https://programmers.co.kr/learn/courses/30/lessons/12948
 ### 문제설명
 ```
@@ -257,7 +257,7 @@ class Solution {
 
 
 ## 10. [연습문제]
----
+
 - 문제링크 : https://programmers.co.kr/learn/courses/30/lessons/12950
 ### 문제설명
 ```
