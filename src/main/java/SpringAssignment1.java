@@ -20,9 +20,7 @@ class Bus{
     }
 
     public void changeStatus(){
-        if(this.gasAmount < 10) {
-            System.out.println("주유가 필요하다");
-        }
+        checkGasAmount();
         if(this.status == "운행"){
             this.status = "차고지행";
         } else if(this.status == "차고지행"){
@@ -31,14 +29,24 @@ class Bus{
     }
 
     public void pickUpPassenger(int newPassenger){
-        int totalPassenger = this.currentPassenger + newPassenger;
-        if(totalPassenger <= maxPassenger && this.status == "운행"){
-            this.currentPassenger = totalPassenger;
-            //System.out.println(currentPassenger);
-        } else if(totalPassenger > maxPassenger){
-            System.out.println("정원 초과입니다.");
-        } else if(this.status == "차고지행"){
-            System.out.println("차고지행 입니다.");
+        if (checkStatus()){
+            int totalPassenger = this.currentPassenger + newPassenger;
+            if(totalPassenger <= maxPassenger && this.status == "운행"){
+                this.currentPassenger = totalPassenger;
+                //System.out.println(currentPassenger);
+            } else if(totalPassenger > maxPassenger){
+                System.out.println("정원 초과입니다.\n");
+            }
+        } else {
+            System.out.println("차고지행 입니다.\n");
+        }
+    }
+
+    public boolean checkStatus(){
+        if(this.status == "운행"){
+            return true;
+        } else {
+            return false;
         }
     }
 
@@ -54,7 +62,7 @@ class Bus{
 
     public void checkGasAmount(){
         if (this.gasAmount < 10){
-            System.out.println("주유량을 확인해주세요");
+            System.out.println("주유량을 확인해주세요\n 주유가 필요합니다.\n");
         }
     }
 
@@ -74,29 +82,36 @@ public class SpringAssignment1 {
     public static void main(String[] args) {
         // Bus 클래스 확인하는 부분
         Bus bus1 = new Bus(50, 1000, 50);
+        System.out.println("bus1 생성 후 확인");
         System.out.println(bus1.toString());
 
-        // 차고지행으로 상태변경
+        // 차고지행으로 상태변경 확인
+        System.out.println("차고지행으로 상태변경!");
         bus1.changeStatus();
         System.out.println(bus1.toString());
 
-        // 차고지행 상태로 승객 20명 태우기
+        // 차고지행 상태에서 승객 태우는것 확인
+        System.out.println("차고지행 상태에서 승객 20명 태우기!");
         bus1.pickUpPassenger(20);
-        System.out.println(bus1.toString());
+
 
         // 다시 운행으로 상태변경
+        System.out.println("운행으로 상태변경!");
         bus1.changeStatus();
         System.out.println(bus1.toString());
 
-        // speed를 20으로 올리기
+        // speedUp 확인
+        System.out.println("speed 20만큼 올리기!");
         bus1.speedUp(20);
         System.out.println(bus1.toString());
 
-        // speed를 10만큼 내리기
+        // speedDown 확인
+        System.out.println("speed 10만큼 내리기!");
         bus1.speedDown(10);
         System.out.println(bus1.toString());
 
-        // 승객 20명씩 3번 태우기
+        // pickUpPassenger 확인
+        System.out.println("승객 20명씩 3번 태우기!");
         bus1.pickUpPassenger(20);
         bus1.pickUpPassenger(20);
         bus1.pickUpPassenger(20);
@@ -106,6 +121,7 @@ public class SpringAssignment1 {
 
         // bus2 생성 후 bus1과 버스 번호 다른 것 확인
         Bus bus2 = new Bus(100, 1500, 70);
+        System.out.println("bus2 생성 후 확인");
         System.out.println(bus2.toString());
     }
 }
