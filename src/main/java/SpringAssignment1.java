@@ -42,12 +42,19 @@ class Bus{
         }
     }
 
-    public void changeSpeed(int newSpeed){
-        if(this.gasAmount < 10) {
+    public void speedUp(int newSpeed){
+        checkGasAmount();
+        this.currentSpeed += newSpeed;
+    }
+
+    public void speedDown(int newSpeed){
+        checkGasAmount();
+        this.currentSpeed -= newSpeed;
+    }
+
+    public void checkGasAmount(){
+        if (this.gasAmount < 10){
             System.out.println("주유량을 확인해주세요");
-        } else {
-            this.currentSpeed += newSpeed;
-            //System.out.println(this.currentSpeed);
         }
     }
 
@@ -65,6 +72,7 @@ class Bus{
 
 public class SpringAssignment1 {
     public static void main(String[] args) {
+        // Bus 클래스 확인하는 부분
         Bus bus1 = new Bus(50, 1000, 50);
         System.out.println(bus1.toString());
 
@@ -80,18 +88,18 @@ public class SpringAssignment1 {
         bus1.changeStatus();
         System.out.println(bus1.toString());
 
+        // speed를 20으로 올리기
+        bus1.speedUp(20);
+        System.out.println(bus1.toString());
+
+        // speed를 10만큼 내리기
+        bus1.speedDown(10);
+        System.out.println(bus1.toString());
+
         // 승객 20명씩 3번 태우기
         bus1.pickUpPassenger(20);
         bus1.pickUpPassenger(20);
         bus1.pickUpPassenger(20);
-        System.out.println(bus1.toString());
-
-        // speed를 20으로 올리기
-        bus1.changeSpeed(20);
-        System.out.println(bus1.toString());
-
-        // speed를 10만큼 내리기
-        bus1.changeSpeed(-10);
         System.out.println(bus1.toString());
 
         System.out.println("-------------");
