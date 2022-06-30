@@ -1,13 +1,13 @@
 import java.util.UUID;
 
 class Bus{
-    int maxPassenger;
-    int currentPassenger;
-    int fee;
-    UUID busNumber;
-    int gasAmount;
-    int currentSpeed;
-    String status;
+    private int maxPassenger;
+    private int currentPassenger;
+    private int fee;
+    private UUID busNumber;
+    private int gasAmount;
+    private int currentSpeed;
+    private String status;
 
     public Bus(int maxPassenger, int fee, int gasAmount){
         this.maxPassenger = maxPassenger;
@@ -19,7 +19,7 @@ class Bus{
         this.status = "운행";
     }
 
-    void changeStatus(){
+    public void changeStatus(){
         if(this.gasAmount < 10) {
             System.out.println("주유가 필요하다");
         }
@@ -30,7 +30,7 @@ class Bus{
         }
     }
 
-    void pickUpPassenger(int newPassenger){
+    public void pickUpPassenger(int newPassenger){
         int totalPassenger = this.currentPassenger + newPassenger;
         if(totalPassenger <= maxPassenger && this.status == "운행"){
             this.currentPassenger = totalPassenger;
@@ -42,7 +42,7 @@ class Bus{
         }
     }
 
-    void changeSpeed(int newSpeed){
+    public void changeSpeed(int newSpeed){
         if(this.gasAmount < 10) {
             System.out.println("주유량을 확인해주세요");
         } else {
